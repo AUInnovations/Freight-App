@@ -1,3 +1,6 @@
+### Status
+[![Build Status](https://travis-ci.org/AUInnovations/Freight-App.png)](https://travis-ci.org/AUInnovations/Freight-App)
+
 ## Freight-App
 Senior Project App for Fall 2015 - Spring 2016 (CSUS)
 

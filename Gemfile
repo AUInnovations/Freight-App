@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'react-rails', '~> 1.4.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw] #needed for windows.
 
 source 'https://rails-assets.org' do
   # rails-assets for react bootstrap bc the only other gem I found was outdated and

@@ -7,17 +7,17 @@ Senior Project App for Fall 2015 - Spring 2016 (CSUS)
 Essentially the project is a Vendor Interaction Platform to manage paperwork with thousands of vendors for [Reliable Carriers Group](https://rcgauto.com)
 
 ## Configurations
-+ Ruby version 2.1.5
-+ Rails version 4.1.0
-+ Rspec (to be decided)
++ Ruby version 2.1.7
++ Rails version 4.2.4
++ Test::Unit
 + React.JS (still experimenting with)
 + Postgres (to be decided)
 
 ## Installation
 Simple rails installation
-1. Clone this project
-2. rake db:migrate
-3. rails s
+  1. Clone this project
+  2. rake db:migrate
+  3. rails s
 
 ## Test Suits
 + (None Written Yet)
@@ -29,7 +29,7 @@ Simple rails installation
 + Edward Drennan (Analyst)
 + Virinder Saini (QA)
 + Aleksander Marinov (Client)
-+ Jinson Ouyang (Senior Project Advisor)
++ Jinsong Ouyang (Senior Project Advisor)
 + Ahmed Salem (Professor)
 
 ## License

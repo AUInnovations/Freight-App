@@ -6,6 +6,8 @@ Senior Project App for Fall 2015 - Spring 2016 (CSUS)
 
 Essentially the project is a Vendor Interaction Platform to manage paperwork with thousands of vendors for [Reliable Carriers Group](https://rcgauto.com)
 
+Please read the [contribution guidelines](contributing.md) before contributing.
+
 ## Configurations
 + Ruby version 2.1.7
 + Rails version 4.2.4

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails Freight-App: test" uuid="e3373021-8599-4103-98d8-53cf2f9336d0">
+      <auth-required>false</auth-required>
+    </data-source>
+    <data-source name="Rails Freight-App: development" uuid="f77f2ec1-3d9c-46ef-a9da-68b64fa04c63">
+      <auth-required>false</auth-required>
+    </data-source>
+  </component>
+</project>

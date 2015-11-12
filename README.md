@@ -2,7 +2,7 @@
 [![Build Status   ](https://travis-ci.org/AUInnovations/Freight-App.png)]
 (https://travis-ci.org/AUInnovations/Freight-App)
 [![Code Climate   ](https://codeclimate.com/github/AUInnovations/Freight-App/badges/gpa.svg)](https://codeclimate.com/github/AUInnovations/Freight-App)
-[![Stories in Ready](https://badge.waffle.io/AUInnovations/Freight-App.png?label=ready&title=Ready)](https://waffle.io/AUInnovations/Freight-App)
+[![Stories in Ready for Dev](https://badge.waffle.io/AUInnovations/Freight-App.png?label=ready-for-dev&title=Ready-For-Development)](https://waffle.io/AUInnovations/Freight-App)
 
 ## Freight-App
 Senior Project App for Fall 2015 - Spring 2016 (CSUS)

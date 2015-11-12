@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/AUInnovations/Freight-App.png?label=ready&title=Ready)](https://waffle.io/AUInnovations/Freight-App)
 ### Status
 [![Build Status   ](https://travis-ci.org/AUInnovations/Freight-App.png)]
 (https://travis-ci.org/AUInnovations/Freight-App)

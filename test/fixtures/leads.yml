@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  phone: 
+  shipping_date: 2015-11-12 00:27:43
+  transport_type: 
+  isOperable: false
+  origin_city: MyString
+  origin_state: MyString
+  origin_zip: 
+  dest_city: MyString
+  dest_state: MyString
+  dest_zip: 
+  vyear: 
+  vmake: MyString
+  vmodel: MyString
+
+two:
+  id: 
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  phone: 
+  shipping_date: 2015-11-12 00:27:43
+  transport_type: 
+  isOperable: false
+  origin_city: MyString
+  origin_state: MyString
+  origin_zip: 
+  dest_city: MyString
+  dest_state: MyString
+  dest_zip: 
+  vyear: 
+  vmake: MyString
+  vmodel: MyString

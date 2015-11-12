@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  transport_type: 
+  isOperable: false
+  vyear: 
+  vmake: MyString
+  vmodel: MyString
+
+two:
+  id: 
+  transport_type: 
+  isOperable: false
+  vyear: 
+  vmake: MyString
+  vmodel: MyString

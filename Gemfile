@@ -15,6 +15,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw] #needed for windows.
 gem "administrate"
 gem "devise"
 gem 'bootstrap-sass'
+gem 'factory_girl_rails'
 
 
 group :development, :test do

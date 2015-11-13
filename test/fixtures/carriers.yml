@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  dot_number: 1
+  is_tax_id: false
+  company_name: MyString
+  dba_name: MyString
+  mailing_address: MyString
+  mailing_city: MyString
+  mailing_state: MyString
+  mailing_zip: 1
+  physical_address: MyString
+  physical_city: MyString
+  physical_state: MyString
+  physical_zip: 1
+  phone: 1
+  fax: 1
+  primary_contact_name: MyString
+  primary_contact_phone: 1
+  primary_contact_email: MyString
+  dispatch_contact_name: MyString
+  dispatch_contact_phone: 1
+  dispatch_contact_email: MyString
+  accounting_contact_name: MyString
+  account_contact_phone: 1
+  accounting_contact_email: MyString
+
+two:
+  id: 1
+  dot_number: 1
+  is_tax_id: false
+  company_name: MyString
+  dba_name: MyString
+  mailing_address: MyString
+  mailing_city: MyString
+  mailing_state: MyString
+  mailing_zip: 1
+  physical_address: MyString
+  physical_city: MyString
+  physical_state: MyString
+  physical_zip: 1
+  phone: 1
+  fax: 1
+  primary_contact_name: MyString
+  primary_contact_phone: 1
+  primary_contact_email: MyString
+  dispatch_contact_name: MyString
+  dispatch_contact_phone: 1
+  dispatch_contact_email: MyString
+  accounting_contact_name: MyString
+  account_contact_phone: 1
+  accounting_contact_email: MyString

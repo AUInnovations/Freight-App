@@ -77,8 +77,8 @@ ActiveRecord::Schema.define(version: 20151113050415) do
     t.integer  "price"
     t.string   "price_term"
     t.boolean  "archived"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "orders", force: :cascade do |t|

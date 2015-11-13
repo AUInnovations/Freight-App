@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class ProductDashboard < Administrate::BaseDashboard
+class CustomerDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,8 +9,17 @@ class ProductDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    name: Field::String,
-    description: Field::Text,
+    customer_type: Field::String,
+    company_name: Field::String,
+    first_name: Field::String,
+    last_name: Field::String,
+    email: Field::String,
+    phone: Field::Number,
+    address: Field::String,
+    city: Field::String,
+    state: Field::String,
+    zip: Field::Number,
+    has_email_updates: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -22,9 +31,9 @@ class ProductDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :name,
-    :description,
-    :created_at,
+    :customer_type,
+    :company_name,
+    :first_name,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -35,7 +44,16 @@ class ProductDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :name,
-    :description,
+    :customer_type,
+    :company_name,
+    :first_name,
+    :last_name,
+    :email,
+    :phone,
+    :address,
+    :city,
+    :state,
+    :zip,
+    :has_email_updates,
   ]
 end

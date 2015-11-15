@@ -3,9 +3,13 @@
     <%= link_to "Freight App", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", help_path %></li>
-        <li><%= link_to "Log in", "#" %></li>
+        <% if vendor_signed_in? %>
+          <li><%= link_to "Account Settings", edit_vendor_registration_path %></li>
+          <li><%= link_to "Logout", destroy_vendor_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign up", new_vendor_session_path %></li>
+          <li><%= link_to "Log in", new_vendor_session_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>

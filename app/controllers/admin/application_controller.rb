@@ -6,6 +6,8 @@
 # you're free to overwrite the RESTful controller actions.
 class Admin::ApplicationController < Administrate::ApplicationController
   before_filter :authenticate_admin
+
+  # This below is a temporary fix until we figure out admin/user/vendor/etc rights
   before_action :require_login
 
   def authenticate_admin

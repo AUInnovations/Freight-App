@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class VehicleDashboard < Administrate::BaseDashboard
+class AdministratorDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,13 +9,9 @@ class VehicleDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    load_id: Field::Number,
-    year: Field::Number,
-    make: Field::String,
-    model: Field::String,
-    type: Field::String,
-    vin: Field::String,
-    is_stock: Field::Boolean,
+    first_name: Field::String,
+    last_name: Field::String,
+    email: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -27,9 +23,9 @@ class VehicleDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :load_id,
-    :year,
-    :make,
+    :first_name,
+    :last_name,
+    :email,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -40,12 +36,15 @@ class VehicleDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :load_id,
-    :year,
-    :make,
-    :model,
-    :type,
-    :vin,
-    :is_stock,
+    :first_name,
+    :last_name,
+    :email,
   ]
+
+  # Overwrite this method to customize how administrators are displayed
+  # across all pages of the admin dashboard.
+  #
+  # def display_resource(administrator)
+  #   "Administrator ##{administrator.id}"
+  # end
 end

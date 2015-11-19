@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151115045619) do
+ActiveRecord::Schema.define(version: 20151119072814) do
+
+  create_table "administrators", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "brokers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "carriers", force: :cascade do |t|
     t.integer  "dot_number"
@@ -123,13 +139,9 @@ ActiveRecord::Schema.define(version: 20151115045619) do
     t.boolean  "send_email_confirmation_to_customer"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-  end
-
-  create_table "products", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "customer_id"
+    t.integer  "assigned_carrier_id"
+    t.integer  "assigned_broker_id"
   end
 
   create_table "quotes", force: :cascade do |t|

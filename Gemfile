@@ -16,6 +16,8 @@ gem "administrate"
 gem "devise"
 gem 'bootstrap-sass'
 gem 'factory_girl_rails'
+gem 'faker'
+gem 'populator'
 
 
 group :development, :test do

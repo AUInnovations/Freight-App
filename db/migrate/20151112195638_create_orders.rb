@@ -37,6 +37,7 @@ class CreateOrders < ActiveRecord::Migration
       t.boolean :note_to_customer_visible
       t.integer :referred_by_cd
       t.boolean :send_email_confirmation_to_customer
+      t.integer :order_status
       t.belongs_to :broker, index: true
       t.belongs_to :customer, index: true
       t.belongs_to :carrier, index: true

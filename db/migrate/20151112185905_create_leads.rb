@@ -1,7 +1,7 @@
 class CreateLeads < ActiveRecord::Migration
   def change
     create_table :leads do |t|
-      t.integer :broker_id
+      t.belongs_to :broker, index: true
       t.string :customer_first_name
       t.string :customer_last_name
       t.string :customer_email
@@ -9,7 +9,7 @@ class CreateLeads < ActiveRecord::Migration
       t.integer :vehicle_year
       t.string :vehicle_make
       t.string :vehicle_model
-      t.string :vehicle_type
+      t.integer :vehicle_type_cd
       t.string :origin_city
       t.string :origin_state
       t.integer :origin_zip
@@ -18,7 +18,7 @@ class CreateLeads < ActiveRecord::Migration
       t.integer :dest_zip
       t.datetime :shipping_date
       t.integer :price
-      t.string :price_term
+      t.integer :price_terms_cd
       t.boolean :archived
 
       t.timestamps null: true

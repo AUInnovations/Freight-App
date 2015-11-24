@@ -15,8 +15,7 @@ class CreateOrders < ActiveRecord::Migration
       t.string :origin_city
       t.string :origin_state
       t.integer :origin_zip
-      t.string :origin_contact_
-      t.string :name
+      t.string :origin_contact_name
       t.string :origin_company_name
       t.integer :origin_phone1
       t.integer :origin_phone2
@@ -29,19 +28,21 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :dest_phone1
       t.integer :dest_phone2
       t.date :available_pickup_date
-      t.boolean :does_vehicle_run
-      t.string :ship_type
+      t.integer :ship_type_cd
       t.boolean :info_from_customer_visible
-      t.integer :load_id
       t.integer :price
-      t.string :price_terms
-      t.string :carrier_paid_type
+      t.integer :price_terms_cd
+      t.integer :carrier_paid_type_cd
       t.text :note_to_customer
       t.boolean :note_to_customer_visible
-      t.string :referred_by
+      t.integer :referred_by_cd
       t.boolean :send_email_confirmation_to_customer
+      t.integer :order_status
+      t.belongs_to :broker, index: true
+      t.belongs_to :customer, index: true
+      t.belongs_to :carrier, index: true
 
-      t.timestamps null: false
+      t.timestamps null: true
     end
   end
 end

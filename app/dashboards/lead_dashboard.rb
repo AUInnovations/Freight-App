@@ -9,7 +9,7 @@ class LeadDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    broker_id: Field::Number,
+    broker: Field::BelongsTo,
     customer_first_name: Field::String,
     customer_last_name: Field::String,
     customer_email: Field::String,
@@ -17,7 +17,7 @@ class LeadDashboard < Administrate::BaseDashboard
     vehicle_year: Field::Number,
     vehicle_make: Field::String,
     vehicle_model: Field::String,
-    vehicle_type: Field::String,
+    vehicle_type_cd: Field::Number,
     origin_city: Field::String,
     origin_state: Field::String,
     origin_zip: Field::Number,
@@ -26,7 +26,7 @@ class LeadDashboard < Administrate::BaseDashboard
     dest_zip: Field::Number,
     shipping_date: Field::DateTime,
     price: Field::Number,
-    price_term: Field::String,
+    price_terms_cd: Field::Number,
     archived: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -39,7 +39,7 @@ class LeadDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :broker_id,
+    :broker,
     :customer_first_name,
     :customer_last_name,
   ]
@@ -52,7 +52,7 @@ class LeadDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :broker_id,
+    :broker,
     :customer_first_name,
     :customer_last_name,
     :customer_email,
@@ -60,7 +60,7 @@ class LeadDashboard < Administrate::BaseDashboard
     :vehicle_year,
     :vehicle_make,
     :vehicle_model,
-    :vehicle_type,
+    :vehicle_type_cd,
     :origin_city,
     :origin_state,
     :origin_zip,
@@ -69,7 +69,7 @@ class LeadDashboard < Administrate::BaseDashboard
     :dest_zip,
     :shipping_date,
     :price,
-    :price_term,
+    :price_terms_cd,
     :archived,
   ]
 

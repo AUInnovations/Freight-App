@@ -19,17 +19,17 @@ class CreateQuotes < ActiveRecord::Migration
       t.integer :dest_zip
       t.date :estimated_ship_date
       t.boolean :does_vehicle_run
-      t.string :ship_type
+      t.integer :ship_type_cd
       t.integer :vyear
       t.string :vmake
       t.string :vmodel
-      t.string :vtype
+      t.integer :vtype_cd
       t.integer :price
-      t.string :price_term
+      t.integer :price_term_cd
       t.text :note_to_customer
-      t.string :referred_by
+      t.integer :referred_by_cd
 
-      t.timestamps null: false
+      t.timestamps null: true
     end
   end
 end

@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class CustomerDashboard < Administrate::BaseDashboard
+class VehicleDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,18 +8,15 @@ class CustomerDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    order: Field::BelongsTo,
     id: Field::Number,
-    customer_type_cd: Field::Number,
-    company_name: Field::String,
-    first_name: Field::String,
-    last_name: Field::String,
-    email: Field::String,
-    phone: Field::Number,
-    address: Field::String,
-    city: Field::String,
-    state: Field::Number,
-    zip: Field::Number,
-    has_email_updates: Field::Boolean,
+    year: Field::Number,
+    make: Field::String,
+    model: Field::String,
+    vehicle_type_cd: Field::Number,
+    vin: Field::String,
+    does_vehicle_run: Field::Boolean,
+    is_stock: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -30,10 +27,10 @@ class CustomerDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :order,
     :id,
-    :customer_type_cd,
-    :company_name,
-    :first_name,
+    :year,
+    :make,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -44,23 +41,20 @@ class CustomerDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :customer_type_cd,
-    :company_name,
-    :first_name,
-    :last_name,
-    :email,
-    :phone,
-    :address,
-    :city,
-    :state,
-    :zip,
-    :has_email_updates,
+    :order,
+    :year,
+    :make,
+    :model,
+    :vehicle_type_cd,
+    :vin,
+    :does_vehicle_run,
+    :is_stock,
   ]
 
-  # Overwrite this method to customize how customers are displayed
+  # Overwrite this method to customize how vehicles are displayed
   # across all pages of the admin dashboard.
   #
-   def display_resource(customer)
-     "#{customer.first_name} #{customer.last_name}"
-   end
+  # def display_resource(vehicle)
+  #   "Vehicle ##{vehicle.id}"
+  # end
 end

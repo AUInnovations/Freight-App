@@ -10,14 +10,15 @@ class DashboardManifest
   # Dashboards returned from this method must be Rails models for Administrate
   # to work correctly.
   DASHBOARDS = [
+    :users,
+    :administrators,
+    :brokers,
     :carriers,
+    :customers,
     :leads,
     :orders,
     :quotes,
-    :administrators,
-    :brokers,
-    :customers,
-    :users,
+    :vehicles,
   ]
 
   # `ROOT_DASHBOARD`

@@ -23,10 +23,9 @@ namespace :db do
 	    order.customer_country    								= Faker::Address.country
 	    order.origin_address											= Faker::Address.street_address
 	    order.origin_city													= Faker::Address.city
-	    order.origin_state												= Faker::Address.state
+	    order.origin_state											  = Faker::Address.state_abbr
 	    order.origin_zip													= Faker::Address.zip
-	  	order.origin_contact_											= Faker::PhoneNumber.phone_number
-	    order.name																= Faker::Name.name
+	  	order.origin_contact_name									= Faker::Name.name
 	    order.origin_company_name 								= Faker::Company.name
 	    order.origin_phone1												= Faker::PhoneNumber.phone_number
 	    order.origin_phone2												= Faker::PhoneNumber.phone_number
@@ -39,17 +38,15 @@ namespace :db do
 	    order.dest_phone1													= Faker::PhoneNumber.phone_number
 	    order.dest_phone2													= Faker::PhoneNumber.phone_number
 	    order.available_pickup_date								= Faker::Date.forward(23)
-	    order.does_vehicle_run										= Faker::Number.between(1, 2)
-	    order.ship_type														= Faker::Number.between(1, 10)
-	    order.info_from_customer_visible					= Faker::PhoneNumber.phone_number
-	    order.load_id															= Faker::Number.between(1, 2)
+	    order.ship_type_cd												= Faker::Number.between(1, 10)
+	    order.info_from_customer_visible					= TRUE
 	    order.price																= Faker::Number.between(1, 10)
-			order.price_terms													= Faker::Number.between(1, 10)
-	    order.carrier_paid_type										= Faker::Number.between(1, 2)
-	    order.note_to_customer										= Faker::Number.between(1, 2)
-	    order.note_to_customer_visible						= Faker::Number.between(1, 2)
-	    order.referred_by													= Faker::Number.between(1, 2)
-	    order.send_email_confirmation_to_customer	= Faker::Number.between(1, 2)
+			order.price_terms_cd											= Faker::Number.between(1, 10)
+	    order.carrier_paid_type_cd								= Faker::Number.between(1, 2)
+	    order.note_to_customer										= Faker::Lorem.sentence(10, 3, 2)
+	    order.note_to_customer_visible						= TRUE
+	    order.referred_by_cd											= Faker::Number.between(1, 2)
+	    order.send_email_confirmation_to_customer	= TRUE
 		end
 	end
 end

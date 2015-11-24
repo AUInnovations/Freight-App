@@ -84,7 +84,7 @@ class CarrierDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how carriers are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(carrier)
-  #   "Carrier ##{carrier.id}"
-  # end
+   def display_resource(carrier)
+     "#{carrier.company_name}"
+   end
 end

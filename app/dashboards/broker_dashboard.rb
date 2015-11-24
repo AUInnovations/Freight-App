@@ -44,7 +44,7 @@ class BrokerDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how brokers are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(broker)
-  #   "Broker ##{broker.id}"
-  # end
+  def display_resource(broker)
+     "#{broker.first_name} #{broker.last_name}"
+   end
 end

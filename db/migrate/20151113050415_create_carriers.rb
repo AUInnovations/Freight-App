@@ -13,16 +13,16 @@ class CreateCarriers < ActiveRecord::Migration
       t.string :physical_city
       t.string :physical_state
       t.integer :physical_zip
-      t.integer :phone
+      t.string :phone
       t.integer :fax
       t.string :primary_contact_name
-      t.integer :primary_contact_phone
+      t.string :primary_contact_phone
       t.string :primary_contact_email
       t.string :dispatch_contact_name
-      t.integer :dispatch_contact_phone
+      t.string :dispatch_contact_phone
       t.string :dispatch_contact_email
       t.string :accounting_contact_name
-      t.integer :account_contact_phone
+      t.string :account_contact_phone
       t.string :accounting_contact_email
 
       t.timestamps null: false

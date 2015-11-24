@@ -5,7 +5,7 @@ class CreateLeads < ActiveRecord::Migration
       t.string :customer_first_name
       t.string :customer_last_name
       t.string :customer_email
-      t.integer :customer_phone
+      t.string :customer_phone
       t.integer :vehicle_year
       t.string :vehicle_make
       t.string :vehicle_model

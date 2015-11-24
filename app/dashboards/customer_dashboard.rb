@@ -14,7 +14,7 @@ class CustomerDashboard < Administrate::BaseDashboard
     first_name: Field::String,
     last_name: Field::String,
     email: Field::String,
-    phone: Field::Number,
+    phone: Field::String,
     address: Field::String,
     city: Field::String,
     state: Field::Number,

@@ -13,7 +13,7 @@ class LeadDashboard < Administrate::BaseDashboard
     customer_first_name: Field::String,
     customer_last_name: Field::String,
     customer_email: Field::String,
-    customer_phone: Field::Number,
+    customer_phone: Field::String,
     vehicle_year: Field::Number,
     vehicle_make: Field::String,
     vehicle_model: Field::String,

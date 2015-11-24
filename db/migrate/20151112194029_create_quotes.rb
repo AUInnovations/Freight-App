@@ -5,10 +5,11 @@ class CreateQuotes < ActiveRecord::Migration
       t.string :customer_last_name
       t.string :customer_company
       t.string :customer_email
-      t.integer :customer_phone1
-      t.integer :customer_phone2
+      t.string :customer_phone1
+      t.string :customer_phone2
       t.string :customer_city
       t.string :customer_state
+      t.integer :customer_zip
       t.integer :customer_zip
       t.string :customer_country
       t.string :origin_city

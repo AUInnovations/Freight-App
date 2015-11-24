@@ -136,6 +136,7 @@ ActiveRecord::Schema.define(version: 20151119072748) do
     t.boolean  "note_to_customer_visible"
     t.integer  "referred_by_cd"
     t.boolean  "send_email_confirmation_to_customer"
+    t.integer  "order_status"
     t.integer  "broker_id"
     t.integer  "customer_id"
     t.integer  "carrier_id"

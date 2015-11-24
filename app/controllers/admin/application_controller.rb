@@ -6,7 +6,7 @@
 # you're free to overwrite the RESTful controller actions.
 class Admin::ApplicationController < Administrate::ApplicationController
   before_filter :authenticate_admin
-  before_action :require_login
+  before_filter :authenticate_user!
 
   def authenticate_admin
     # TODO Add authentication logic here.

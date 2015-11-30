@@ -50,7 +50,7 @@ All required fields must be filled out before submit places the order in awaitin
 2. **Question**
   1. Answer
 
-\pagebreak
+
 
 # Customer Edit Info
 
@@ -89,7 +89,7 @@ All new information that is provided needs to match the format of that informati
 1. **Question**
   1. Answer
 
-\pagebreak
+
 
 # Main Page for Logins
 ######Table of Contents
@@ -124,7 +124,7 @@ The "log in" button shouldnt be clickable till both textfields have data in them
 2. **Question**
   1. Answer
   
-\pagebreak
+
 # Open or Edit Order
 ######Table of Contents
 1. [Goal](https://github.com/AUInnovations/Freight-App/wiki/Open-or-Edit-Order#goal)
@@ -166,7 +166,7 @@ All Edit's done by Vendor / Customer must be approved by Broker. - Need to proba
   1. Answer
 2. **Should the vendor have a button that allows for them to bid on orders (if they have been initially accepted)?**
   1. Answer
-\pagebreak
+
   # Relevant Orders
 
 ######Table of Contents
@@ -213,7 +213,7 @@ The **user** must be currently signed in to be able to access this page.  **Brok
   1. Answer
 2. **Question**
   1. Answer
-\pagebreak
+
 # Vendor Edit Info
 
 ######Table of Contents
@@ -251,7 +251,7 @@ All new information that is provided needs to match the format of that informati
 1. **Question**
   1. Answer
 
-\pagebreak
+
 # View Current Orders
 
 ######Table of Contents
@@ -292,7 +292,7 @@ The **user** must be currently signed in to be able to access this page.  Once a
   1. Answer
 2. **Question**
   1. Answer
-\pagebreak
+
 # View Order History
 
 

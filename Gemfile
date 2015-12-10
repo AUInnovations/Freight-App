@@ -12,9 +12,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw] #needed for windows.
-gem "simple_enum"
-gem "administrate","~> 0.1.1"
-gem "devise"
+gem 'simple_enum'
+gem 'rails_admin', '0.8.1'
+gem 'devise'
+gem 'paper_trail', '~> 4.0.0'
 gem 'bootstrap-sass'
 gem 'factory_girl_rails'
 gem 'faker'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119072748) do
+ActiveRecord::Schema.define(version: 20151210083142) do
 
   create_table "administrators", force: :cascade do |t|
     t.string   "first_name"
@@ -42,16 +42,16 @@ ActiveRecord::Schema.define(version: 20151119072748) do
     t.string   "physical_city"
     t.string   "physical_state"
     t.integer  "physical_zip"
-    t.string   "phone"
+    t.integer  "phone"
     t.integer  "fax"
     t.string   "primary_contact_name"
-    t.string   "primary_contact_phone"
+    t.integer  "primary_contact_phone"
     t.string   "primary_contact_email"
     t.string   "dispatch_contact_name"
-    t.string   "dispatch_contact_phone"
+    t.integer  "dispatch_contact_phone"
     t.string   "dispatch_contact_email"
     t.string   "accounting_contact_name"
-    t.string   "account_contact_phone"
+    t.integer  "account_contact_phone"
     t.string   "accounting_contact_email"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20151119072748) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.string   "phone"
+    t.integer  "phone"
     t.string   "address"
     t.string   "city"
     t.integer  "state"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20151119072748) do
     t.string   "customer_first_name"
     t.string   "customer_last_name"
     t.string   "customer_email"
-    t.string   "customer_phone"
+    t.integer  "customer_phone"
     t.integer  "vehicle_year"
     t.string   "vehicle_make"
     t.string   "vehicle_model"
@@ -104,8 +104,8 @@ ActiveRecord::Schema.define(version: 20151119072748) do
     t.string   "customer_last_name"
     t.string   "customer_company"
     t.string   "customer_email"
-    t.string   "customer_phone1"
-    t.string   "customer_phone2"
+    t.integer  "customer_phone1"
+    t.integer  "customer_phone2"
     t.string   "customer_city"
     t.string   "customer_state"
     t.integer  "customer_zip"
@@ -116,16 +116,16 @@ ActiveRecord::Schema.define(version: 20151119072748) do
     t.integer  "origin_zip"
     t.string   "origin_contact_name"
     t.string   "origin_company_name"
-    t.string   "origin_phone1"
-    t.string   "origin_phone2"
+    t.integer  "origin_phone1"
+    t.integer  "origin_phone2"
     t.string   "dest_address"
     t.string   "dest_city"
     t.string   "dest_state"
     t.integer  "dest_zip"
     t.string   "dest_contact_name"
     t.string   "dest_company_name"
-    t.string   "dest_phone1"
-    t.string   "dest_phone2"
+    t.integer  "dest_phone1"
+    t.integer  "dest_phone2"
     t.date     "available_pickup_date"
     t.integer  "ship_type_cd"
     t.boolean  "info_from_customer_visible"
@@ -136,7 +136,6 @@ ActiveRecord::Schema.define(version: 20151119072748) do
     t.boolean  "note_to_customer_visible"
     t.integer  "referred_by_cd"
     t.boolean  "send_email_confirmation_to_customer"
-    t.integer  "order_status"
     t.integer  "broker_id"
     t.integer  "customer_id"
     t.integer  "carrier_id"
@@ -153,8 +152,8 @@ ActiveRecord::Schema.define(version: 20151119072748) do
     t.string   "customer_last_name"
     t.string   "customer_company"
     t.string   "customer_email"
-    t.string   "customer_phone1"
-    t.string   "customer_phone2"
+    t.integer  "customer_phone1"
+    t.integer  "customer_phone2"
     t.string   "customer_city"
     t.string   "customer_state"
     t.integer  "customer_zip"
@@ -213,5 +212,28 @@ ActiveRecord::Schema.define(version: 20151119072748) do
   end
 
   add_index "vehicles", ["order_id"], name: "index_vehicles_on_order_id"
+
+  create_table "version_associations", force: :cascade do |t|
+    t.integer "version_id"
+    t.string  "foreign_key_name", null: false
+    t.integer "foreign_key_id"
+  end
+
+  add_index "version_associations", ["foreign_key_name", "foreign_key_id"], name: "index_version_associations_on_foreign_key"
+  add_index "version_associations", ["version_id"], name: "index_version_associations_on_version_id"
+
+  create_table "versions", force: :cascade do |t|
+    t.string   "item_type",                         null: false
+    t.integer  "item_id",                           null: false
+    t.string   "event",                             null: false
+    t.string   "whodunnit"
+    t.text     "object",         limit: 1073741823
+    t.datetime "created_at"
+    t.text     "object_changes", limit: 1073741823
+    t.integer  "transaction_id"
+  end
+
+  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+  add_index "versions", ["transaction_id"], name: "index_versions_on_transaction_id"
 
 end

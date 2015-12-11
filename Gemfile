@@ -20,6 +20,7 @@ gem 'bootstrap-sass'
 gem 'factory_girl_rails'
 gem 'faker'
 gem 'populator'
+gem 'coffee-script-source', '1.8.0' #compatibility issue with some Windows PCs
 
 
 group :development, :test do

@@ -42,16 +42,16 @@ ActiveRecord::Schema.define(version: 20151210083142) do
     t.string   "physical_city"
     t.string   "physical_state"
     t.integer  "physical_zip"
-    t.integer  "phone"
+    t.string   "phone"
     t.integer  "fax"
     t.string   "primary_contact_name"
-    t.integer  "primary_contact_phone"
+    t.string   "primary_contact_phone"
     t.string   "primary_contact_email"
     t.string   "dispatch_contact_name"
-    t.integer  "dispatch_contact_phone"
+    t.string   "dispatch_contact_phone"
     t.string   "dispatch_contact_email"
     t.string   "accounting_contact_name"
-    t.integer  "account_contact_phone"
+    t.string   "account_contact_phone"
     t.string   "accounting_contact_email"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20151210083142) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.integer  "phone"
+    t.string   "phone"
     t.string   "address"
     t.string   "city"
     t.integer  "state"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20151210083142) do
     t.string   "customer_first_name"
     t.string   "customer_last_name"
     t.string   "customer_email"
-    t.integer  "customer_phone"
+    t.string   "customer_phone"
     t.integer  "vehicle_year"
     t.string   "vehicle_make"
     t.string   "vehicle_model"
@@ -93,8 +93,8 @@ ActiveRecord::Schema.define(version: 20151210083142) do
     t.integer  "price"
     t.integer  "price_terms_cd"
     t.boolean  "archived"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   add_index "leads", ["broker_id"], name: "index_leads_on_broker_id"
@@ -104,8 +104,8 @@ ActiveRecord::Schema.define(version: 20151210083142) do
     t.string   "customer_last_name"
     t.string   "customer_company"
     t.string   "customer_email"
-    t.integer  "customer_phone1"
-    t.integer  "customer_phone2"
+    t.string   "customer_phone1"
+    t.string   "customer_phone2"
     t.string   "customer_city"
     t.string   "customer_state"
     t.integer  "customer_zip"
@@ -116,16 +116,16 @@ ActiveRecord::Schema.define(version: 20151210083142) do
     t.integer  "origin_zip"
     t.string   "origin_contact_name"
     t.string   "origin_company_name"
-    t.integer  "origin_phone1"
-    t.integer  "origin_phone2"
+    t.string   "origin_phone1"
+    t.string   "origin_phone2"
     t.string   "dest_address"
     t.string   "dest_city"
     t.string   "dest_state"
     t.integer  "dest_zip"
     t.string   "dest_contact_name"
     t.string   "dest_company_name"
-    t.integer  "dest_phone1"
-    t.integer  "dest_phone2"
+    t.string   "dest_phone1"
+    t.string   "dest_phone2"
     t.date     "available_pickup_date"
     t.integer  "ship_type_cd"
     t.boolean  "info_from_customer_visible"
@@ -136,11 +136,12 @@ ActiveRecord::Schema.define(version: 20151210083142) do
     t.boolean  "note_to_customer_visible"
     t.integer  "referred_by_cd"
     t.boolean  "send_email_confirmation_to_customer"
+    t.integer  "order_status"
     t.integer  "broker_id"
     t.integer  "customer_id"
     t.integer  "carrier_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "orders", ["broker_id"], name: "index_orders_on_broker_id"
@@ -152,8 +153,8 @@ ActiveRecord::Schema.define(version: 20151210083142) do
     t.string   "customer_last_name"
     t.string   "customer_company"
     t.string   "customer_email"
-    t.integer  "customer_phone1"
-    t.integer  "customer_phone2"
+    t.string   "customer_phone1"
+    t.string   "customer_phone2"
     t.string   "customer_city"
     t.string   "customer_state"
     t.integer  "customer_zip"
@@ -175,8 +176,8 @@ ActiveRecord::Schema.define(version: 20151210083142) do
     t.integer  "price_term_cd"
     t.text     "note_to_customer"
     t.integer  "referred_by_cd"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "users", force: :cascade do |t|

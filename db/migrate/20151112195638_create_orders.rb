@@ -42,7 +42,7 @@ class CreateOrders < ActiveRecord::Migration
       t.belongs_to :customer, index: true
       t.belongs_to :carrier, index: true
 
-      t.timestamps null: true
+      t.timestamps null: false
     end
   end
 end

@@ -30,7 +30,7 @@ class CreateQuotes < ActiveRecord::Migration
       t.text :note_to_customer
       t.integer :referred_by_cd
 
-      t.timestamps null: true
+      t.timestamps null: false
     end
   end
 end

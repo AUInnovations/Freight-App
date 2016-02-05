@@ -21,7 +21,7 @@ class CreateLeads < ActiveRecord::Migration
       t.integer :price_terms_cd
       t.boolean :archived
 
-      t.timestamps null: true
+      t.timestamps null: false
     end
   end
 end

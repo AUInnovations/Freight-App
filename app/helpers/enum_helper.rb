@@ -114,4 +114,19 @@ module EnumHelper
         ['WY', 'WY']
     ]
   end
+
+  def carrier_paid_type_cd
+    ['At Pick Up', 'One Delivery', 'Billing - Comcheck', 'Billing - Check in the mail']
+  end
+
+  def price_terms_cd
+    ['Pay at Order Placement', 'Pay at Pickup', 'Pay on Delivery', 'Billing']
+  end
+
+  def ship_type_cd
+    %w(Open Enclosed)
+  end
+  def vehicle_type_cd
+    %w(Sedan SUV Truck Van Other)
+  end
 end

@@ -1,12 +1,22 @@
 class Quote < ActiveRecord::Base
+  include EnumHelper
   has_paper_trail
   def vtype_cd_enum
-    %w(Sedan SUV Truck Van Other)
+    vehicle_type_cd
   end
   def price_terms_cd_enum
-    ['Pay at Order Placement', 'Pay at Pickup', 'Pay on Delivery', 'Billing']
+    price_terms_cd
   end
   def ship_type_cd_enum
-    %w(Open Enclosed)
+    ship_type_cd
+  end
+  def dest_state_enum
+    us_states_abbr
+  end
+  def origin_state_enum
+    us_states_abbr
+  end
+  def customer_state_enum
+    us_states_abbr
   end
 end

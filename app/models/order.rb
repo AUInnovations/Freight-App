@@ -5,6 +5,7 @@ class Order < ActiveRecord::Base
   belongs_to :broker, :inverse_of => :orders
   belongs_to :customer, :inverse_of => :orders
   belongs_to :carrier, :inverse_of => :orders
+  validates :customer, presence: true
 
   rails_admin do
     configure :carrier do
@@ -19,7 +20,7 @@ class Order < ActiveRecord::Base
       inline_add false
       inline_edit false
     end
-    exclude_fields :versions
+    exclude_fields :versions, :deleted
   end
   def order_status_enum
     order_status

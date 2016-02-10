@@ -37,12 +37,4 @@ RailsAdmin.config do |config|
 
   ## Custom Configs Here
    config.main_app_name = ["Freight App", "The best freight management system."]
-
-   Rails.application.eager_load!
-   ActiveRecord::Base.descendants.each do |imodel|
-     config.model "#{imodel.name}" do
-       include_all_fields
-       exclude_fields :versions
-     end
-   end
 end

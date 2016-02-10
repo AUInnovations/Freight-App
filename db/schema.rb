@@ -233,7 +233,7 @@ ActiveRecord::Schema.define(version: 20160210055516) do
     t.string   "vmodel"
     t.integer  "vtype_cd"
     t.integer  "price"
-    t.integer  "price_term_cd"
+    t.integer  "price_terms_cd"
     t.text     "note_to_customer"
     t.integer  "referred_by_cd"
     t.datetime "created_at",                          null: false

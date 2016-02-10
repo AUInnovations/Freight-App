@@ -26,7 +26,7 @@ class CreateQuotes < ActiveRecord::Migration
       t.string :vmodel
       t.integer :vtype_cd
       t.integer :price
-      t.integer :price_term_cd
+      t.integer :price_terms_cd
       t.text :note_to_customer
       t.integer :referred_by_cd
 

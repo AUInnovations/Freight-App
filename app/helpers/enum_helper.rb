@@ -130,6 +130,18 @@ module EnumHelper
     [ %w(Sedan 0), %w(SUV 1), %w(Truck 2), %w(Van 3), %w(Other 4) ]
   end
   def order_status
-    [ %w(Not Ready 0), %w(Posted 1), %w(Accept Terms 2), %w(Dispatched 3), %w(Pending Pickup 4), %w(Picked Up 5), %w(Delivered 6), %w(Cancelled 7), %w(Archived 8), %w(Issues 9) ]
+    [ %w(Not Ready 0), %w(Posted 1), %w(Accept Terms 2), %w(Dispatched 3), %w(Pending Pickup 4), %w(Picked Up 5), %w(Delivered 6), %w(Cancelled 7), %w(Archived 8), %w(Issues 9), %w(Completed 10) ]
+  end
+  def roles
+    [ %w(Admin 0), %w(Broker 1), %w(Customer 2), %w(Carrier 3) ]
+  end
+  def customer_type_cd
+    [ %w(Company 0), %w(Individual 1)]
+  end
+  def local_or_lane_cd
+    [ %w(Local 0), %w(Lane 1)]
+  end
+  def load_status
+    [ ['Accept Terms', 0], ['Pending Pickup', 1], ['Picked Up', 2], ['Delivered', 3] ]
   end
 end

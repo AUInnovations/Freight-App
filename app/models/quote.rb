@@ -1,6 +1,10 @@
 class Quote < ActiveRecord::Base
   include Tombstoneable, EnumHelper
   has_paper_trail
+  rails_admin do
+    include_all_fields
+    exclude_fields :versions, :deleted
+  end
   def vtype_cd_enum
     vehicle_type_cd
   end

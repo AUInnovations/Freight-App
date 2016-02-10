@@ -116,17 +116,20 @@ module EnumHelper
   end
 
   def carrier_paid_type_cd
-    ['At Pick Up', 'One Delivery', 'Billing - Comcheck', 'Billing - Check in the mail']
+    [ ['At Pick Up', 0], ['One Delivery', 1],['Billing - Comcheck', 2], ['Billing - Check in the mail',3] ]
   end
 
   def price_terms_cd
-    ['Pay at Order Placement', 'Pay at Pickup', 'Pay on Delivery', 'Billing']
+    [ ['Pay at Order Placement', 0], ['Pay at Pickup', 1], ['Pay on Delivery', 2], ['Billing', 3] ]
   end
 
   def ship_type_cd
-    %w(Open Enclosed)
+    [ %w(Open 0), %w(Enclosed 1) ]
   end
   def vehicle_type_cd
-    %w(Sedan SUV Truck Van Other)
+    [ %w(Sedan 0), %w(SUV 1), %w(Truck 2), %w(Van 3), %w(Other 4) ]
+  end
+  def order_status
+    [ %w(Not Ready 0), %w(Posted 1), %w(Accept Terms 2), %w(Dispatched 3), %w(Pending Pickup 4), %w(Picked Up 5), %w(Delivered 6), %w(Cancelled 7), %w(Archived 8), %w(Issues 9) ]
   end
 end

@@ -1,5 +1,5 @@
 class Quote < ActiveRecord::Base
-  include EnumHelper
+  include Tombstoneable, EnumHelper
   has_paper_trail
   def vtype_cd_enum
     vehicle_type_cd

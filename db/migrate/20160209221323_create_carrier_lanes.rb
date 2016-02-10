@@ -13,6 +13,7 @@ class CreateCarrierLanes < ActiveRecord::Migration
       t.string :dest_state
       t.integer :radius
 
+      t.belongs_to :carrier, index:true
       t.timestamps null: false
     end
   end

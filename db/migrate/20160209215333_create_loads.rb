@@ -9,7 +9,7 @@ class CreateLoads < ActiveRecord::Migration
       t.integer :offer
       t.date :dispatch_date
       t.belongs_to :carrier, index:true
-      t.belongs_to:order, index:true, null:false
+      t.belongs_to :order, index:true, null:false
 
       t.timestamps null: false
     end

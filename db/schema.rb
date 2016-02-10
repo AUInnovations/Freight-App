@@ -11,39 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209221323) do
+ActiveRecord::Schema.define(version: 20160210055516) do
 
   create_table "administrators", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "deleted",    default: false, null: false
   end
 
   create_table "brokers", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "deleted",    default: false, null: false
   end
 
   create_table "carrier_lanes", force: :cascade do |t|
     t.integer  "one_three_hauler"
     t.integer  "four_six_hauler"
     t.integer  "seven_ten_hauler"
-    t.boolean  "non_running_vehicles", null: false
-    t.boolean  "enclosed_transport",   null: false
+    t.boolean  "non_running_vehicles",                 null: false
+    t.boolean  "enclosed_transport",                   null: false
     t.integer  "local_or_lane"
     t.string   "origin_city"
     t.string   "origin_state"
     t.string   "dest_city"
     t.string   "dest_state"
     t.integer  "radius"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.integer  "carrier_id"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.boolean  "deleted",              default: false, null: false
   end
+
+  add_index "carrier_lanes", ["carrier_id"], name: "index_carrier_lanes_on_carrier_id"
 
   create_table "carriers", force: :cascade do |t|
     t.integer  "dot_number"
@@ -87,6 +93,7 @@ ActiveRecord::Schema.define(version: 20160209221323) do
     t.string   "insurance_contact_agent_email"
     t.string   "insurance_contact_agent_fax"
     t.boolean  "can_do_business",                   default: false, null: false
+    t.boolean  "deleted",                           default: false, null: false
   end
 
   create_table "customers", force: :cascade do |t|
@@ -101,8 +108,9 @@ ActiveRecord::Schema.define(version: 20160209221323) do
     t.integer  "state"
     t.integer  "zip"
     t.boolean  "has_email_updates"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.boolean  "deleted",           default: false, null: false
   end
 
   create_table "leads", force: :cascade do |t|
@@ -125,8 +133,9 @@ ActiveRecord::Schema.define(version: 20160209221323) do
     t.integer  "price"
     t.integer  "price_terms_cd"
     t.boolean  "archived"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.boolean  "deleted",             default: false, null: false
   end
 
   add_index "leads", ["broker_id"], name: "index_leads_on_broker_id"
@@ -140,9 +149,10 @@ ActiveRecord::Schema.define(version: 20160209221323) do
     t.integer  "offer"
     t.date     "dispatch_date"
     t.integer  "carrier_id"
-    t.integer  "order_id",      null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "order_id",                      null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.boolean  "deleted",       default: false, null: false
   end
 
   add_index "loads", ["carrier_id"], name: "index_loads_on_carrier_id"
@@ -189,8 +199,9 @@ ActiveRecord::Schema.define(version: 20160209221323) do
     t.integer  "broker_id"
     t.integer  "customer_id"
     t.integer  "carrier_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
+    t.boolean  "deleted",                             default: false, null: false
   end
 
   add_index "orders", ["broker_id"], name: "index_orders_on_broker_id"
@@ -225,24 +236,26 @@ ActiveRecord::Schema.define(version: 20160209221323) do
     t.integer  "price_term_cd"
     t.text     "note_to_customer"
     t.integer  "referred_by_cd"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.boolean  "deleted",             default: false, null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.integer  "role"
+    t.boolean  "deleted",                default: false, null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
@@ -257,8 +270,9 @@ ActiveRecord::Schema.define(version: 20160209221323) do
     t.string   "vin"
     t.boolean  "does_vehicle_run"
     t.boolean  "is_stock"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.boolean  "deleted",          default: false, null: false
   end
 
   add_index "vehicles", ["order_id"], name: "index_vehicles_on_order_id"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151210083142) do
+ActiveRecord::Schema.define(version: 20160209221323) do
 
   create_table "administrators", force: :cascade do |t|
     t.string   "first_name"
@@ -27,6 +27,22 @@ ActiveRecord::Schema.define(version: 20151210083142) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "carrier_lanes", force: :cascade do |t|
+    t.integer  "one_three_hauler"
+    t.integer  "four_six_hauler"
+    t.integer  "seven_ten_hauler"
+    t.boolean  "non_running_vehicles", null: false
+    t.boolean  "enclosed_transport",   null: false
+    t.integer  "local_or_lane"
+    t.string   "origin_city"
+    t.string   "origin_state"
+    t.string   "dest_city"
+    t.string   "dest_state"
+    t.integer  "radius"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "carriers", force: :cascade do |t|
@@ -53,8 +69,24 @@ ActiveRecord::Schema.define(version: 20151210083142) do
     t.string   "accounting_contact_name"
     t.string   "account_contact_phone"
     t.string   "accounting_contact_email"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+    t.string   "insurance_broker_company"
+    t.string   "insurance_broker_name"
+    t.string   "insurance_broker_address"
+    t.string   "insurance_broker_city"
+    t.integer  "insurance_broker_zip"
+    t.string   "insurance_broker_state"
+    t.string   "insurance_broker_phone"
+    t.string   "insurance_broker_fax"
+    t.string   "insurance_broker_email"
+    t.string   "insurance_policy_number"
+    t.date     "insurance_policy_expiration_date"
+    t.boolean  "insurance_contact_agent_on_behave"
+    t.string   "insurance_contact_agent_name"
+    t.string   "insurance_contact_agent_email"
+    t.string   "insurance_contact_agent_fax"
+    t.boolean  "can_do_business",                   default: false, null: false
   end
 
   create_table "customers", force: :cascade do |t|
@@ -98,6 +130,23 @@ ActiveRecord::Schema.define(version: 20151210083142) do
   end
 
   add_index "leads", ["broker_id"], name: "index_leads_on_broker_id"
+
+  create_table "loads", force: :cascade do |t|
+    t.integer  "status"
+    t.date     "pick_up_date"
+    t.date     "delivery_date"
+    t.string   "driver_name"
+    t.string   "driver_phone"
+    t.integer  "offer"
+    t.date     "dispatch_date"
+    t.integer  "carrier_id"
+    t.integer  "order_id",      null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "loads", ["carrier_id"], name: "index_loads_on_carrier_id"
+  add_index "loads", ["order_id"], name: "index_loads_on_order_id"
 
   create_table "orders", force: :cascade do |t|
     t.string   "customer_first_name"

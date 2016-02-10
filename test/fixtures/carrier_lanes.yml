@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  [one_three_hauler: 1
+  four_six_hauler: 1
+  seven_ten_hauler: 1
+  non_running_vehicles: false
+  enclosed_transport: false
+  local_or_lane: 1
+  origin_city: MyString
+  origin_state: MyString
+  dest_city: MyString
+  dest_state: MyString
+  radius: 1
+
+two:
+  [one_three_hauler: 1
+  four_six_hauler: 1
+  seven_ten_hauler: 1
+  non_running_vehicles: false
+  enclosed_transport: false
+  local_or_lane: 1
+  origin_city: MyString
+  origin_state: MyString
+  dest_city: MyString
+  dest_state: MyString
+  radius: 1

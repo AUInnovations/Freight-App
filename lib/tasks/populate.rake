@@ -10,6 +10,21 @@ namespace :db do
 		#clear out existing records from Order and Customer models
 		[Order,Customer].each(&:delete_all)
 
+    Customer.populate 10 do |customer|
+      customer.customer_type_cd         = Faker::Number.between(0, 1)
+      customer.company_name             = Faker::Company.name
+      customer.first_name               = Faker::Name.first_name
+      customer.last_name                = Faker::Name.last_name
+      customer.email                    = Faker::Internet.email
+      customer.phone                    = Faker::PhoneNumber.phone_number
+      customer.address                  = Faker::Address.street_address
+      customer.city                     = Faker::Address.city
+      customer.state                    = Faker::Address.state
+      customer.zip                      = Faker::Address.zip
+      customer.has_email_updates        = TRUE
+      customer.deleted                  = FALSE
+    end
+
 		Order.populate 100 do |order|
 			order.customer_first_name 								= Faker::Name.first_name
 	    order.customer_last_name  								= Faker::Name.last_name
@@ -47,6 +62,8 @@ namespace :db do
 	    order.note_to_customer_visible						= TRUE
 	    order.referred_by_cd											= Faker::Number.between(1, 2)
 	    order.send_email_confirmation_to_customer	= TRUE
+      order.customer_id													= Faker::Number.between(0, Customer.count)
+      order.deleted                             = FALSE
 		end
 	end
 end

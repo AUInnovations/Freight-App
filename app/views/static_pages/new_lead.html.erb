@@ -1,0 +1,15 @@
+<% provide(:title, "Home") %>
+<!doctype html>
+<html>
+<head>
+  <title><%= yield(:title) %> | Freight App</title>
+</head>
+<body>
+<%= simple_form_for @lead, url: new_lead_url, as: 'new_lead' do |f| %>
+    <%= f.input :customer_first_name %>
+    <%= f.input :customer_last_name %>
+
+    <%= f.button :submit %>
+<% end %>
+</body>
+</html>

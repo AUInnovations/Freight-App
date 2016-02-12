@@ -16,7 +16,7 @@ class CreateLeads < ActiveRecord::Migration
       t.string :dest_city
       t.string :dest_state
       t.integer :dest_zip
-      t.datetime :shipping_date
+      t.date :shipping_date
       t.integer :price
       t.integer :price_terms_cd
       t.boolean :archived

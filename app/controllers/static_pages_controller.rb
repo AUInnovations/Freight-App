@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+
   def home
   end
 
@@ -13,5 +14,7 @@ class StaticPagesController < ApplicationController
 
   def new_lead
     @lead = Lead.new
+  end
+  def new_lead_submitted
   end
 end

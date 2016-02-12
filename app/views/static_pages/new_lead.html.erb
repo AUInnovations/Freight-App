@@ -1,15 +1,60 @@
-<% provide(:title, "Home") %>
+<% provide(:title, "New Lead") %>
 <!doctype html>
 <html>
 <head>
   <title><%= yield(:title) %> | Freight App</title>
 </head>
-<body>
-<%= simple_form_for @lead, url: new_lead_url, as: 'new_lead' do |f| %>
-    <%= f.input :customer_first_name %>
-    <%= f.input :customer_last_name %>
-
-    <%= f.button :submit %>
+<body align="center">
+<%= simple_form_for @lead, url: new_lead_url, as: 'new_lead', wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
+  <div>
+    <h2>
+      Basic Contact Information
+    </h2>
+  </div>
+  <div>
+    <%= f.error_notification %>
+    <%= f.input :customer_first_name, placeholder: 'First Name' %>
+    <%= f.input :customer_last_name, placeholder: 'Last Name' %>
+    <%= f.input :customer_email, placeholder: 'Email' %>
+    <%= f.input :customer_phone, placeholder: 'Phone' %>
+  </div>
+  <div>
+    <h2>
+      Vehicle Information
+    </h2>
+  </div>
+  <div>
+    <%= f.input :vehicle_year, placeholder: 'Year', as: :string %>
+    <%= f.input :vehicle_make, placeholder: 'Make' %>
+    <%= f.input :vehicle_model, placeholder: 'Model' %>
+    <%= f.input :vehicle_type_cd, collection: vehicle_type_cd %>
+  </div>
+  <div>
+    <h2>
+      Origin
+    </h2>
+  </div>
+  <div >
+    <%= f.input :origin_zip, placeholder: 'Zip', as: :string %>
+    <%= f.input :origin_city, placeholder: 'City' %>
+    <%= f.input :origin_state, placeholder: 'State' %>
+  </div>
+  <div>
+    <h2>
+      Destination
+    </h2>
+  </div>
+  <div>
+    <%= f.input :dest_zip, placeholder: 'Zip', as: :string %>
+    <%= f.input :dest_city, placeholder: 'City' %>
+    <%= f.input :dest_state, placeholder: 'State' %>
+  </div>
+  <div>
+    <%= f.input :shipping_date, inline_label: 'Shipping Date', as: :date %>
+  </div>
+  <div style="margin-top: 15px">
+    <%= f.button :submit, class: 'btn btn-lg btn-primary' %>
+  </div>
 <% end %>
 </body>
 </html>

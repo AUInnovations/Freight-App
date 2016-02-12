@@ -21,6 +21,7 @@ gem 'faker'
 gem 'populator'
 gem 'simple_form'
 gem 'coffee-script-source', '1.8.0' #compatibility issue with some Windows PCs
+gem 'zip-codes'
 
 
 group :development, :test do

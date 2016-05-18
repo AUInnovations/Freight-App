@@ -5,7 +5,10 @@
   <title><%= yield(:title) %> | Freight App</title>
 </head>
 <body align="center">
-<%= simple_form_for @lead, url: new_lead_url, as: 'new_lead', wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
+<div class="video-container">
+  <iframe src="https://www.rcgauto.com/shipping/quote/?current_zip=&destination_zip=" id='inneriframe' scrolling=no > </iframe>
+</div>
+<!--<%= simple_form_for @lead, url: new_lead_url, as: 'new_lead', wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
   <div>
     <h2>
       Basic Contact Information
@@ -55,6 +58,11 @@
   <div style="margin-top: 15px">
     <%= f.button :submit, class: 'btn btn-lg btn-primary' %>
   </div>
-<% end %>
+<% end %>-->
 </body>
 </html>
+<script>
+  $(".button").each(function() {
+    $(this).attr("target","_blank");
+  });
+</script>

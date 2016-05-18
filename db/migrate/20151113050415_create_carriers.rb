@@ -14,7 +14,7 @@ class CreateCarriers < ActiveRecord::Migration
       t.string :physical_state
       t.integer :physical_zip
       t.string :phone
-      t.integer :fax
+      t.string :fax
       t.string :primary_contact_name
       t.string :primary_contact_phone
       t.string :primary_contact_email

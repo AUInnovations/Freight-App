@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20160210055516) do
     t.string   "physical_state"
     t.integer  "physical_zip"
     t.string   "phone"
-    t.integer  "fax"
+    t.string   "fax"
     t.string   "primary_contact_name"
     t.string   "primary_contact_phone"
     t.string   "primary_contact_email"

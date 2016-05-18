@@ -22,6 +22,7 @@ gem 'populator'
 gem 'simple_form'
 gem 'coffee-script-source', '1.8.0' #compatibility issue with some Windows PCs
 gem 'zip-codes'
+gem 'rails_admin_import', '~> 1.2'
 
 
 group :development, :test do

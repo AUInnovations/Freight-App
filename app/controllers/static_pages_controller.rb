@@ -13,6 +13,7 @@ class StaticPagesController < ApplicationController
   end
 
   def map
+    render file: "public/map.html"
   end
 
   def new_lead

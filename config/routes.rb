@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get   'new_lead' => 'static_pages#new_lead'
   get   'carrier_signup' => 'static_pages#carrier_signup'
   get 'carrier_submitted' => 'static_pages#carrier_submitted'
+  get 'map_95757_elk_grove' => 'static_pages#map'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

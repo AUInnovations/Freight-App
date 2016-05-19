@@ -24,7 +24,8 @@ gem 'coffee-script-source', '1.8.0' #compatibility issue with some Windows PCs
 gem 'zip-codes'
 gem 'rails_admin_import', '~> 1.2'
 gem 'carrierwave'
-
+gem 'gmaps4rails'
+gem 'underscore-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -12,6 +12,9 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
+  def map
+  end
+
   def new_lead
     @lead = Lead.new
   end

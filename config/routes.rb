@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   get   'help'    => 'static_pages#help'
   get   'about'   => 'static_pages#about'
   get   'contact' => 'static_pages#contact'
-  post   'new_lead' => 'new_lead#new_lead'
+  post   'carrier_signup' => 'carrier_signup#carrier_signup'
   get   'new_lead' => 'static_pages#new_lead'
-  get 'new_lead_submitted' => 'static_pages#new_lead_submitted'
+  get   'carrier_signup' => 'static_pages#carrier_signup'
+  get 'carrier_submitted' => 'static_pages#carrier_submitted'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,116 @@
+<% provide(:title, "Carrier Signup") %>
+<!doctype html>
+<html>
+<head>
+  <title><%= yield(:title) %> | Freight App</title>
+</head>
+<body align="center">
+<div style="background-color: #e84236; color: white; text-align: left; height: 200px">
+  <p style="line-height: 1.5; padding-left: 100px;"></br></br>Resources for Car Haulers</br>Information to Grow Your Business</p>
+  <h1 align="left">CARRIERS</h1>
+</div>
+<div style="text-align: left; font-size: 16px;">
+  <p>As a non-asset based freight broker, RCG Logistics relies on independent carriers and drivers to help us deliver our customers’ vehicle shipments all over the United States. We work with motor carriers of all sizes, from single owner/operators to companies with large truck fleets. With hundreds of loads moving each week, we are always looking for quality car haulers to transport vehicles for us.</p>
+
+  <p>RCG Logistics is committed to being the brokerage of choice for quality auto transporters. We help carriers grow, improve profitability and expand their fleet size with favorable payment terms, featuring no cost quick-pay and accepting invoices by fax.</p>
+
+  <div class="section group">
+    <div class="col span_1_of_2">
+      <h3>To Ship Cars with Us Carriers Must Meet the Following:</h3>
+      <ul>
+        <li>Have valid insurance coverage for transporting automobiles</li>
+        <li>Proper and current operating authority if hauling interstate loads</li>
+        <li>Signed Broker-Carrier Contract and dispatch sheet</li>
+        <li>Must have cell/GPS tracking</li>
+        <li>6 months of verifiable experience</li>
+      </ul>
+    </div>
+    <div class="col span_1_of_2">
+      <h3>Shipping New or High Value Cars:</h3>
+      <ul>
+        <li>Two years minimum verifiable experience</li>
+        <li>Trailer and Truck must be 2000 or newer</li>
+        <li>Not have excessive claims</li>
+        <li>Insurance certificate showing minimum of $250,000</li>
+      </ul>
+      RCG Logistics reserved the right to store all carrier documents and contracts on file.
+    </div>
+  </div>
+
+</div>
+<%= simple_form_for @carrier, url: carrier_signup_url, as: 'carrier_form', html: { class: 'form-horizontal' },
+                    wrapper: :horizontal_form,
+                    wrapper_mappings: {
+                        check_boxes: :horizontal_radio_and_checkboxes,
+                        radio_buttons: :horizontal_radio_and_checkboxes,
+                        file: :horizontal_file_input,
+                        boolean: :horizontal_boolean
+                    } do |f| %>
+    <%= f.error_notification %>
+
+    <%= f.input :company_name, placeholder: 'Company Name' %>
+
+    <%= f.input :dot_number, placeholder: 'Dot / Tax Number' %>
+
+    <%= f.input :mailing_address, placeholder: 'Mailing Address' %>
+
+    <%= f.input :mailing_city, placeholder: 'Mailing City' %>
+
+    <%= f.input :mailing_zip, placeholder: 'Mailing Zip' %>
+
+    <%= f.input :mailing_state, placeholder: 'Mailing State' %>
+
+    <%= f.input :primary_contact_name, placeholder: 'Primary Contact Name' %>
+
+    <%= f.input :primary_contact_phone, placeholder: 'Primary Contact Phone' %>
+
+    <%= f.input :primary_contact_email, placeholder: 'Primary Contact Email' %>
+
+    <%= f.input :dispatch_contact_email,  label: 'Proof of Insurance', as: :file %>
+
+    <%= f.button :submit %>
+<% end %>
+</body>
+
+<style>
+  /*  SECTIONS  */
+  .section {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+  }
+
+  /*  COLUMN SETUP  */
+  .col {
+  display: block;
+  float:left;
+  margin: 1% 0 1% 1.6%;
+  }
+  .col:first-child { margin-left: 0; }
+
+  /*  GROUPING  */
+  .group:before,
+  .group:after { content:""; display:table; }
+  .group:after { clear:both;}
+  .group { zoom:1; /* For IE 6/7 */ }
+
+  /*  GRID OF TWO  */
+  .span_2_of_2 {
+  width: 100%;
+  }
+  .span_1_of_2 {
+  width: 49.2%;
+  }
+
+  /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+  @media only screen and (max-width: 480px) {
+  .col {
+  margin: 1% 0 1% 0%;
+  }
+  }
+
+  @media only screen and (max-width: 480px) {
+  .span_2_of_2, .span_1_of_2 { width: 100%; }
+  }
+</style>

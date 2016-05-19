@@ -15,6 +15,11 @@ class StaticPagesController < ApplicationController
   def new_lead
     @lead = Lead.new
   end
-  def new_lead_submitted
+
+  def carrier_signup
+    @carrier = Carrier.new
+  end
+
+  def carrier_submitted
   end
 end

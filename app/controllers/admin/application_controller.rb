@@ -7,6 +7,9 @@
 class Admin::ApplicationController < Administrate::ApplicationController
   before_filter :authenticate_admin
 
+  # This below is a temporary fix until we figure out admin/user/vendor/etc rights
+  before_filter :authenticate_user!
+
   def authenticate_admin
     # TODO Add authentication logic here.
   end
